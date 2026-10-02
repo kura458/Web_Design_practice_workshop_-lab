@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Complete your purchase securely using our simple checkout page."
+    >
+
+    <title>Checkout | ShopEase</title>
+
+    <style>
+        /* ---------- Global Styles ---------- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: min(100% - 32px, 1000px);
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        /* ---------- Main Checkout Layout ---------- */
+        .checkout-layout {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        section {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 28px;
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            margin-bottom: 24px;
+            color: #111827;
+        }
+
+        /* ---------- Cart Section ---------- */
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .product-image {
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 10px;
+            background-color: #f3f4f6;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product-details h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .product-description {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .divider {
+            border: 0;
+            border-top: 1px solid #e5e7eb;
+            margin: 24px 0;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: #4b5563;
+        }
+
+        .summary-row.total {
+            color: #111827;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+
+        /* ---------- Payment Form ---------- */
+        .form-intro {
+            color: #6b7280;
+            font-size: 0.92rem;
+            margin-top: -12px;
+            margin-bottom: 22px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #374151;
+        }
+
+        .required {
+            color: #dc2626;
+            margin-left: 3px;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            color: #111827;
+            background-color: #ffffff;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.13);
+        }
+
+        input::placeholder {
+            color: #9ca3af;
+        }
+
+        .help-text {
+            color: #6b7280;
+            font-size: 0.82rem;
+            margin-top: 7px;
+        }
+
+        .secure-note {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #4b5563;
+            font-size: 0.85rem;
+            margin: 8px 0 22px;
+        }
+
+        .pay-button {
+            display: block;
+            width: 100%;
+            padding: 14px 18px;
+            border: none;
+            border-radius: 8px;
+            background-color: #2563eb;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .pay-button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .pay-button:focus-visible {
+            outline: 3px solid #93c5fd;
+            outline-offset: 3px;
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.85rem;
+            margin-top: 28px;
+        }
+
+        /* ---------- Responsive Design ---------- */
+        @media (max-width: 700px) {
+            .container {
+                padding: 28px 0;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .checkout-layout {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 22px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .cart-item {
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .product-image {
+                width: 85px;
+                height: 85px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <header>
+            <h1>Checkout</h1>
+            <p class="subtitle">
+                Review your order and enter your payment information.
+            </p>
+        </header>
+
+        <div class="checkout-layout">
+
+            <!-- First Section: Shopping Cart -->
+            <section aria-labelledby="cart-heading">
+                <h2 id="cart-heading">Your Cart</h2>
+
+                <div class="cart-item">
+                    <img
+                        class="product-image"
+                        src="https://cdn.freecodecamp.org/curriculum/labs/cube.jpg"
+                        alt="A colorful cube product"
+                        width="110"
+                        height="110"
+                    >
+
+                    <div class="product-details">
+                        <h3>Classic Cube</h3>
+                        <p class="product-description">
+                            Standard edition
+                        </p>
+                        <p class="product-price">$25.00</p>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>$25.00</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>Free</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Tax</span>
+                    <span>$0.00</span>
+                </div>
+
+                <hr class="divider">
+
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span>$25.00</span>
+                </div>
+            </section>
+
+            <!-- Second Section: Payment Information -->
+            <section aria-labelledby="payment-heading">
+                <h2 id="payment-heading">
+                    Payment Information
+                </h2>
+
+                <p class="form-intro">
+                    Fields marked with an asterisk (*) are required.
+                </p>
+
+                <form action="#" method="post">
+
+                    <div class="form-group">
+                        <label for="card-name">
+                            Cardholder Name
+                            <span class="required" aria-hidden="true">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="card-name"
+                            name="card-name"
+                            placeholder="Name on your card"
+                            autocomplete="cc-name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="card-number">
+                            Card Number
+                            <span class="required" aria-hidden="true">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="card-number"
+                            name="card-number"
+                            placeholder="1234 5678 9012 3456"
+                            inputmode="numeric"
+                            autocomplete="cc-number"
+                            aria-describedby="card-number-help"
+                            required
+                        >
+
+                        <p id="card-number-help" class="help-text">
+                            Enter your 16-digit card number. You may include
+                            spaces between groups of four digits.
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expiry-date">
+                            Expiration Date
+                            <span class="required" aria-hidden="true">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="expiry-date"
+                            name="expiry-date"
+                            placeholder="MM/YY"
+                            autocomplete="cc-exp"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="security-code">
+                            Security Code (CVV)
+                            <span class="required" aria-hidden="true">*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="security-code"
+                            name="security-code"
+                            placeholder="123"
+                            inputmode="numeric"
+                            autocomplete="cc-csc"
+                            required
+                        >
+                    </div>
+
+                    <p class="secure-note">
+                        <span aria-hidden="true">&#128274;</span>
+                        Complete the form to review your payment details.
+                    </p>
+
+                    <button type="submit" class="pay-button">
+                        Place Order — $25.00
+                    </button>
+
+                </form>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 ShopEase. All rights reserved.</p>
+        </footer>
+    </main>
+</body>
+</html>
