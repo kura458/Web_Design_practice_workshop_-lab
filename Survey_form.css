@@ -1,0 +1,306 @@
+
+/* =========================
+   1. Global Styles
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --background-color: #f1f5f9;
+    --surface-color: #ffffff;
+    --text-color: #1e293b;
+    --muted-color: #64748b;
+    --border-color: #cbd5e1;
+    --focus-color: rgba(37, 99, 235, 0.18);
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 40px 16px;
+    min-height: 100vh;
+}
+
+/* =========================
+   2. Main Container
+========================= */
+
+.survey-container {
+    max-width: 720px;
+    margin: 0 auto;
+    background: var(--surface-color);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================
+   3. Header Section
+========================= */
+
+.survey-header {
+    background: var(--primary-color);
+    color: #ffffff;
+    padding: 36px 32px;
+    text-align: center;
+}
+
+#title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+#description {
+    max-width: 540px;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: #eaf1ff;
+}
+
+/* =========================
+   4. Form Layout
+========================= */
+
+#survey-form {
+    padding: 32px;
+}
+
+fieldset {
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 26px;
+    min-width: 0;
+}
+
+legend {
+    padding: 0 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-group > label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.question {
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+/* =========================
+   5. Text Inputs
+========================= */
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: var(--text-color);
+    font: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px var(--focus-color);
+}
+
+select {
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* =========================
+   6. Radio Buttons
+      and Checkboxes
+========================= */
+
+.option-group {
+    display: grid;
+    gap: 12px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.option:hover {
+    background-color: #eff6ff;
+    border-color: #93c5fd;
+}
+
+.option input {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.option span {
+    font-size: 0.95rem;
+}
+
+/* =========================
+   7. Helper Text
+========================= */
+
+.help-text {
+    display: block;
+    color: var(--muted-color);
+    font-size: 0.85rem;
+    margin-top: 6px;
+    font-weight: 400;
+}
+
+/* =========================
+   8. Submit Button
+========================= */
+
+#submit {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: #ffffff;
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+#submit:hover {
+    background: var(--primary-hover);
+    box-shadow: 0 5px 14px rgba(37, 99, 235, 0.22);
+    transform: translateY(-1px);
+}
+
+#submit:active {
+    transform: translateY(0);
+}
+
+#submit:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+/* =========================
+   9. Footer Note
+========================= */
+
+.privacy-note {
+    margin-top: 18px;
+    text-align: center;
+    color: var(--muted-color);
+    font-size: 0.85rem;
+}
+
+/* =========================
+   10. Responsive Design
+========================= */
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .survey-container {
+        border-radius: 12px;
+    }
+
+    .survey-header {
+        padding: 28px 20px;
+    }
+
+    #title {
+        font-size: 1.65rem;
+    }
+
+    #description {
+        font-size: 0.9rem;
+    }
+
+    #survey-form {
+        padding: 22px 16px;
+    }
+
+    fieldset {
+        padding: 18px 14px;
+        margin-bottom: 22px;
+    }
+
+    legend {
+        font-size: 1rem;
+    }
+}
+
+/* =========================
+   11. Reduced Motion
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

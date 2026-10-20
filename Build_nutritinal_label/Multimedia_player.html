@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="A multimedia player featuring music, educational video, and its transcript."
+    >
+
+    <title>Multimedia Player | Music & Video</title>
+
+    <style>
+        /* General styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f3f6fb;
+            color: #1f2937;
+            line-height: 1.7;
+            padding: 30px 20px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #172554;
+            font-size: 2.3rem;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #64748b;
+        }
+
+        section {
+            background-color: #ffffff;
+            padding: 25px;
+            margin-bottom: 24px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 5px 18px rgba(15, 23, 42, 0.05);
+        }
+
+        h2 {
+            color: #1e3a8a;
+            font-size: 1.4rem;
+            margin-bottom: 18px;
+        }
+
+        audio {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        video {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            background-color: #111827;
+        }
+
+        .transcript p {
+            color: #475569;
+        }
+
+        footer {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Multimedia Player</h1>
+            <p>Enjoy music, educational videos, and transcripts in one place.</p>
+        </header>
+
+        <!-- Section 1: Audio Player -->
+        <section>
+            <h2>Sailing Away — Music Player</h2>
+
+            <audio controls aria-label="Audio player for Sailing Away">
+                <source
+                    src="https://cdn.freecodecamp.org/curriculum/js-music-player/sailing-away.mp3"
+                    type="audio/mpeg"
+                >
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+
+        <!-- Section 2: Video Player -->
+        <section>
+            <h2>Understanding the JavaScript Map Method</h2>
+
+            <video
+                controls
+                width="640"
+                aria-label="Educational video explaining the JavaScript map method"
+            >
+                <source
+                    src="https://cdn.freecodecamp.org/curriculum/labs/what-is-the-map-method-and-how-does-it-work.mp4"
+                    type="video/mp4"
+                >
+
+                <track
+                    src="https://cdn.freecodecamp.org/curriculum/labs/what-is-the-map-method-and-how-does-it-work.vtt"
+                    kind="subtitles"
+                    srclang="en"
+                    label="English"
+                >
+
+                Your browser does not support the video element.
+            </video>
+        </section>
+
+        <!-- Section 3: Video Transcript -->
+        <section class="transcript">
+            <h2>Transcript</h2>
+
+            <p>
+                This educational video explains how the JavaScript map()
+                method works. The map() method creates a new array by
+                applying a callback function to each element of an
+                existing array. It is useful when transforming data
+                without modifying the original array.
+            </p>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Multimedia Player. Created for learning purposes.</p>
+        </footer>
+    </main>
+</body>
+
+</html>

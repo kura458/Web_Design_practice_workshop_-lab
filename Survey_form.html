@@ -1,134 +1,222 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Survey Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Complete our student survey to help us understand your learning preferences and technology interests.">
+
+    <title>Student Survey Form</title>
+
+    <link rel="stylesheet" href="Survey_form.css">
 </head>
 
 <body>
 
-  <h1 id="title">Student Survey Form</h1>
+    <main class="survey-container">
 
-  <p id="description">
-    Please complete this short survey to help us learn more about you.
-  </p>
+        <header class="survey-header">
+            <h1 id="title">Student Survey Form</h1>
+            <p id="description">
+                Help us understand your learning preferences, interests,
+                and educational goals by completing this short survey.
+            </p>
+        </header>
 
-  <form id="survey-form">
+        <form id="survey-form">
 
-    <!-- Name -->
-    <label id="name-label" for="name">Name:</label>
-    <input
-      id="name"
-      name="name"
-      type="text"
-      placeholder="Enter your name"
-      required
-    >
+            <!-- Personal Information -->
+            <fieldset>
+                <legend>Personal Information</legend>
 
-    <!-- Email -->
-    <label id="email-label" for="email">Email:</label>
-    <input
-      id="email"
-      name="email"
-      type="email"
-      placeholder="Enter your email"
-      required
-    >
+                <div class="form-group">
+                    <label id="name-label" for="name">Full Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
 
-    <!-- Number -->
-    <label id="number-label" for="number">Age:</label>
-    <input
-      id="number"
-      name="age"
-      type="number"
-      min="10"
-      max="30"
-      placeholder="Enter your age"
-    >
+                <div class="form-group">
+                    <label id="email-label" for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
 
-    <!-- Dropdown -->
-    <label for="dropdown">What is your current status?</label>
+                <div class="form-group">
+                    <label id="number-label" for="number">Age</label>
+                    <input
+                        type="number"
+                        id="number"
+                        name="age"
+                        min="10"
+                        max="100"
+                        placeholder="Enter your age"
+                    >
+                    <small class="help-text">
+                        Your age must be between 10 and 100.
+                    </small>
+                </div>
+            </fieldset>
 
-    <select id="dropdown">
-      <option value="student">Student</option>
-      <option value="professional">Professional</option>
-    </select>
+            <!-- Educational Status -->
+            <fieldset>
+                <legend>Educational Background</legend>
 
-    <!-- Radio Buttons -->
-    <p>What is your preferred learning method?</p>
+                <div class="form-group">
+                    <label for="dropdown">What is your current status?</label>
+                    <select id="dropdown" name="status" required>
+                        <option value="" disabled selected>
+                            Select your current status
+                        </option>
+                        <option value="student">Student</option>
+                        <option value="professional">Working Professional</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </fieldset>
 
-    <label for="online">
-      <input
-        type="radio"
-        id="online"
-        name="learning-method"
-        value="online"
-      >
-      Online
-    </label>
+            <!-- Learning Preferences -->
+            <fieldset>
+                <legend>Learning Preferences</legend>
 
-    <label for="classroom">
-      <input
-        type="radio"
-        id="classroom"
-        name="learning-method"
-        value="classroom"
-      >
-      Classroom
-    </label>
+                <p class="question">
+                    What is your preferred learning method?
+                </p>
 
-    <!-- Checkboxes -->
-    <p>Which technologies are you interested in?</p>
+                <div class="option-group">
+                    <label class="option" for="learning-online">
+                        <input
+                            id="learning-online"
+                            type="radio"
+                            name="learning-method"
+                            value="online"
+                            required
+                        >
+                        <span>Online Learning</span>
+                    </label>
 
-    <label for="programming">
-      <input
-        type="checkbox"
-        id="programming"
-        name="technology"
-        value="programming"
-      >
-      Programming
-    </label>
+                    <label class="option" for="learning-classroom">
+                        <input
+                            id="learning-classroom"
+                            type="radio"
+                            name="learning-method"
+                            value="classroom"
+                        >
+                        <span>Classroom Learning</span>
+                    </label>
 
-    <label for="web">
-      <input
-        type="checkbox"
-        id="web"
-        name="technology"
-        value="web-development"
-      >
-      Web Development
-    </label>
+                    <label class="option" for="learning-hybrid">
+                        <input
+                            id="learning-hybrid"
+                            type="radio"
+                            name="learning-method"
+                            value="hybrid"
+                        >
+                        <span>Hybrid Learning</span>
+                    </label>
+                </div>
+            </fieldset>
 
-    <label for="cybersecurity">
-      <input
-        type="checkbox"
-        id="cybersecurity"
-        name="technology"
-        value="cybersecurity"
-      >
-      Cybersecurity
-    </label>
+            <!-- Technology Interests -->
+            <fieldset>
+                <legend>Technology Interests</legend>
 
-    <!-- Comments -->
-    <p>Additional Comments:</p>
+                <p class="question">
+                    Which technologies are you interested in?
+                    <span class="help-text">Select all that apply.</span>
+                </p>
 
-    <textarea
-      id="comments"
-      name="comments"
-      placeholder="Enter your comments here..."
-    ></textarea>
+                <div class="option-group">
+                    <label class="option">
+                        <input
+                            type="checkbox"
+                            name="technology"
+                            value="programming"
+                        >
+                        <span>Programming</span>
+                    </label>
 
-    <!-- Submit -->
-    <br><br>
+                    <label class="option">
+                        <input
+                            type="checkbox"
+                            name="technology"
+                            value="web-development"
+                        >
+                        <span>Web Development</span>
+                    </label>
 
-    <button id="submit" type="submit">
-      Submit
-    </button>
+                    <label class="option">
+                        <input
+                            type="checkbox"
+                            name="technology"
+                            value="cybersecurity"
+                        >
+                        <span>Cybersecurity</span>
+                    </label>
 
-  </form>
+                    <label class="option">
+                        <input
+                            type="checkbox"
+                            name="technology"
+                            value="artificial-intelligence"
+                        >
+                        <span>Artificial Intelligence</span>
+                    </label>
+
+                    <label class="option">
+                        <input
+                            type="checkbox"
+                            name="technology"
+                            value="mobile-development"
+                        >
+                        <span>Mobile App Development</span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <!-- Additional Comments -->
+            <fieldset>
+                <legend>Additional Feedback</legend>
+
+                <div class="form-group">
+                    <label for="comments">
+                        Do you have any suggestions or comments?
+                    </label>
+
+                    <textarea
+                        id="comments"
+                        name="comments"
+                        rows="5"
+                        placeholder="Share your thoughts with us..."
+                    ></textarea>
+                </div>
+            </fieldset>
+
+            <!-- Submit Button -->
+            <button id="submit" type="submit">
+                Submit Survey
+            </button>
+
+            <p class="privacy-note">
+                Thank you for taking the time to share your feedback.
+            </p>
+
+        </form>
+
+    </main>
 
 </body>
 

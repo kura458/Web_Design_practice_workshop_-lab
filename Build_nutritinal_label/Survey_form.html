@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Form</title>
+</head>
+
+<body>
+
+  <h1 id="title">Student Survey Form</h1>
+
+  <p id="description">
+    Please complete this short survey to help us learn more about you.
+  </p>
+
+  <form id="survey-form">
+
+    <!-- Name -->
+    <label id="name-label" for="name">Name:</label>
+    <input
+      id="name"
+      name="name"
+      type="text"
+      placeholder="Enter your name"
+      required
+    >
+
+    <!-- Email -->
+    <label id="email-label" for="email">Email:</label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      placeholder="Enter your email"
+      required
+    >
+
+    <!-- Number -->
+    <label id="number-label" for="number">Age:</label>
+    <input
+      id="number"
+      name="age"
+      type="number"
+      min="10"
+      max="30"
+      placeholder="Enter your age"
+    >
+
+    <!-- Dropdown -->
+    <label for="dropdown">What is your current status?</label>
+
+    <select id="dropdown">
+      <option value="student">Student</option>
+      <option value="professional">Professional</option>
+    </select>
+
+    <!-- Radio Buttons -->
+    <p>What is your preferred learning method?</p>
+
+    <label for="online">
+      <input
+        type="radio"
+        id="online"
+        name="learning-method"
+        value="online"
+      >
+      Online
+    </label>
+
+    <label for="classroom">
+      <input
+        type="radio"
+        id="classroom"
+        name="learning-method"
+        value="classroom"
+      >
+      Classroom
+    </label>
+
+    <!-- Checkboxes -->
+    <p>Which technologies are you interested in?</p>
+
+    <label for="programming">
+      <input
+        type="checkbox"
+        id="programming"
+        name="technology"
+        value="programming"
+      >
+      Programming
+    </label>
+
+    <label for="web">
+      <input
+        type="checkbox"
+        id="web"
+        name="technology"
+        value="web-development"
+      >
+      Web Development
+    </label>
+
+    <label for="cybersecurity">
+      <input
+        type="checkbox"
+        id="cybersecurity"
+        name="technology"
+        value="cybersecurity"
+      >
+      Cybersecurity
+    </label>
+
+    <!-- Comments -->
+    <p>Additional Comments:</p>
+
+    <textarea
+      id="comments"
+      name="comments"
+      placeholder="Enter your comments here..."
+    ></textarea>
+
+    <!-- Submit -->
+    <br><br>
+
+    <button id="submit" type="submit">
+      Submit
+    </button>
+
+  </form>
+
+</body>
+
+</html>
