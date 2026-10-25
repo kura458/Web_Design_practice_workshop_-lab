@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Development Documentation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav id="navbar">
+    <header>Web Development Guide</header>
+    <a class="nav-link" href="#HTML_Basics">HTML Basics</a>
+    <a class="nav-link" href="#HTML_Elements">HTML Elements</a>
+    <a class="nav-link" href="#CSS_Basics">CSS Basics</a>
+    <a class="nav-link" href="#CSS_Selectors">CSS Selectors</a>
+    <a class="nav-link" href="#Responsive_Design">Responsive Design</a>
+  </nav>
+
+  <main id="main-doc">
+    <section class="main-section" id="HTML_Basics">
+      <header>HTML Basics</header>
+      <p>HTML stands for HyperText Markup Language.</p>
+      <p>It provides the structure and content of a web page.</p>
+      <p>A basic HTML document starts with a doctype declaration.</p>
+      <code>&lt;!DOCTYPE html&gt;</code>
+      <ul>
+        <li>HTML uses elements to organize content.</li>
+        <li>Elements are written using tags.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="HTML_Elements">
+      <header>HTML Elements</header>
+      <p>HTML elements represent different types of content.</p>
+      <p>Most elements have an opening tag and a closing tag.</p>
+      <code>&lt;p&gt;Hello world!&lt;/p&gt;</code>
+      <p>Headings describe the importance of page content.</p>
+      <code>&lt;h1&gt;Main Heading&lt;/h1&gt;</code>
+      <ul>
+        <li>Paragraphs contain text.</li>
+        <li>Links connect pages and resources.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="CSS_Basics">
+      <header>CSS Basics</header>
+      <p>CSS stands for Cascading Style Sheets.</p>
+      <p>It controls the appearance of HTML elements.</p>
+      <code>p { color: blue; }</code>
+      <p>CSS can change colors, spacing, sizes, and layouts.</p>
+      <ul>
+        <li>External CSS keeps styles separate from HTML.</li>
+        <li>CSS rules contain selectors and declarations.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="CSS_Selectors">
+      <header>CSS Selectors</header>
+      <p>Selectors determine which HTML elements receive styles.</p>
+      <p>An element selector targets elements by their tag name.</p>
+      <code>h1 { font-size: 2rem; }</code>
+      <p>A class selector starts with a period.</p>
+      <code>.card { padding: 1rem; }</code>
+      <p>An ID selector starts with a hash symbol.</p>
+      <code>#navbar { background-color: black; }</code>
+      <ul>
+        <li>Class selectors can match multiple elements.</li>
+        <li>ID selectors identify a specific element.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Responsive_Design">
+      <header>Responsive Design</header>
+      <p>Responsive design helps websites adapt to different screen sizes.</p>
+      <p>Media queries apply styles under specific conditions.</p>
+      <code>@media (max-width: 600px) {
+  body { font-size: 14px; }
+}</code>
+      <p>Flexible layouts improve usability on mobile devices.</p>
+      <ul>
+        <li>Use the viewport meta tag.</li>
+        <li>Test layouts on different screen sizes.</li>
+        <li>Use flexible widths when appropriate.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
