@@ -1,0 +1,279 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0f172a;
+  color: #f8fafc;
+  line-height: 1.6;
+}
+
+#header {
+  width: 100%;
+  min-height: 75px;
+  padding: 12px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111827;
+  border-bottom: 1px solid #334155;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+#header-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+#nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-link {
+  color: #f8fafc;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #38bdf8;
+}
+
+main {
+  padding-top: 75px;
+}
+
+.hero {
+  min-height: 460px;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #1e3a8a, #0f172a 75%);
+}
+
+.hero h1 {
+  max-width: 750px;
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: #cbd5e1;
+  font-size: 1.15rem;
+  margin-bottom: 28px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background-color: #38bdf8;
+  color: #082f49;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease,
+              transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: #7dd3fc;
+  transform: translateY(-2px);
+}
+
+.section {
+  padding: 75px 8%;
+  text-align: center;
+  scroll-margin-top: 75px;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 18px;
+  color: #7dd3fc;
+}
+
+.section > p {
+  color: #cbd5e1;
+  margin-bottom: 30px;
+}
+
+.features-container,
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 35px;
+}
+
+.feature,
+.price-card {
+  flex: 1 1 220px;
+  max-width: 340px;
+  padding: 28px 22px;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  background-color: #1e293b;
+}
+
+.feature h3,
+.price-card h3 {
+  margin-bottom: 15px;
+  color: #f8fafc;
+}
+
+.feature p,
+.price-card p {
+  color: #cbd5e1;
+}
+
+#video {
+  display: block;
+  width: 100%;
+  max-width: 650px;
+  aspect-ratio: 16 / 9;
+  margin: 30px auto 0;
+  border: 2px solid #38bdf8;
+  border-radius: 12px;
+}
+
+.price {
+  margin: 18px 0;
+  color: #38bdf8 !important;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.price-card .button {
+  margin-top: 24px;
+}
+
+.featured {
+  border: 2px solid #38bdf8;
+  transform: scale(1.03);
+}
+
+#subscribe {
+  background-color: #111827;
+}
+
+#form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+#email {
+  width: 100%;
+  max-width: 350px;
+  padding: 14px;
+  border: 1px solid #64748b;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+#submit {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: #38bdf8;
+  color: #082f49;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#submit:hover {
+  background-color: #7dd3fc;
+}
+
+footer {
+  padding: 25px 15px;
+  text-align: center;
+  color: #94a3b8;
+  background-color: #020617;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  #header {
+    padding: 12px 4%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  #header-img {
+    width: 38px;
+    height: 38px;
+  }
+
+  #nav-bar {
+    gap: 12px;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+  }
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 55px 5%;
+  }
+
+  .section h2 {
+    font-size: 1.7rem;
+  }
+
+  .featured {
+    transform: none;
+  }
+
+  #form {
+    flex-direction: column;
+  }
+
+  #email,
+  #submit {
+    max-width: 100%;
+    width: 100%;
+  }
+}
