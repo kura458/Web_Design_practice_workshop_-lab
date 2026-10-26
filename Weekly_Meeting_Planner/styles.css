@@ -1,0 +1,153 @@
+
+:root {
+  --color0: #f8d7da;
+  --color1: #f5c6a5;
+  --color2: #f9e79f;
+  --color3: #d5f5e3;
+  --color4: #82e0aa;
+  --color5: #28b463;
+
+  --solid-border: 2px solid #34495e;
+  --dashed-border: 2px dashed #34495e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 30px 16px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fb;
+  color: #263238;
+}
+
+main {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #214761;
+  margin-bottom: 25px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 4px 12px #00000012;
+}
+
+caption {
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #214761;
+}
+
+th,
+td {
+  border: 1px solid #d5dce3;
+  padding: 16px 10px;
+  text-align: center;
+}
+
+thead th {
+  background-color: #214761;
+  color: white;
+}
+
+th.time {
+  background-color: #e8eef3;
+  color: #263238;
+  white-space: nowrap;
+}
+
+.available-0 {
+  background-color: var(--color0);
+}
+
+.available-1 {
+  background-color: var(--color1);
+}
+
+.available-2 {
+  background-color: var(--color2);
+}
+
+.available-3 {
+  background-color: var(--color3);
+}
+
+.available-4 {
+  background-color: var(--color4);
+}
+
+.available-5 {
+  background-color: var(--color5);
+}
+
+.sharp td {
+  border-bottom: var(--solid-border);
+}
+
+.half td {
+  border-bottom: var(--dashed-border);
+}
+
+#legend {
+  margin: 30px auto 0;
+  max-width: 500px;
+}
+
+#legend > span {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#legend-gradient {
+  height: 25px;
+  border: 1px solid #34495e;
+  background-image: linear-gradient(
+    to right,
+    var(--color0) 0%,
+    var(--color0) 17%,
+    var(--color1) 17%,
+    var(--color1) 33%,
+    var(--color2) 33%,
+    var(--color2) 50%,
+    var(--color3) 50%,
+    var(--color3) 67%,
+    var(--color4) 67%,
+    var(--color4) 83%,
+    var(--color5) 83%,
+    var(--color5) 100%
+  );
+}
+
+.legend-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 20px 8px;
+  }
+
+  th,
+  td {
+    padding: 10px 4px;
+    font-size: 0.8rem;
+  }
+
+  th.time {
+    white-space: normal;
+  }
+}
